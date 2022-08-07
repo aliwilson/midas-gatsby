@@ -1,4 +1,4 @@
-require("dotenv").config()
+require('dotenv').config({ path: process.env.NODE_ENV !== 'development' ? `.env.gb` : `.env.gb` });
 
 module.exports = {
   siteMetadata: {
@@ -22,6 +22,7 @@ module.exports = {
         shopifyConnections: ["collections"],
       },
     },
+    'gatsby-plugin-theme-ui',
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

@@ -1,5 +1,6 @@
 import * as React from "react"
 import Logo from "../icons/logo"
+
 import {
   footerStyle,
   copyright,
