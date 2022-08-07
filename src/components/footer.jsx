@@ -39,7 +39,7 @@ export function Footer() {
                   alt="Deploy to Gatsby Cloud"
                   height="38"
                   width="251"
-                />
+                /> 
               </a>
             </li>
           )}
