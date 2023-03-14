@@ -1,52 +1,43 @@
-import * as React from "react"
-import Logo from "../icons/logo"
-import {
-  footerStyle,
-  copyright,
-  links,
-  blurb,
-  logos,
-  footerNavList,
-  footerNavListItem,
-} from "./footer.module.css"
+import React from "react";
+import { Box, Flex, Container, NavLink } from "theme-ui";
+import HeartIcon from "./icons/Heart";
 
-export function Footer() {
+const Footer = () => {
   return (
-    <footer className={footerStyle}>
-      <div className={blurb}>
-        <div className={logos}>
-          <Logo />
-        </div>
-        <strong>gatsby-starter-shopify</strong> change this by editing{" "}
-        <code>src/components/footer.jsx</code>
-      </div>
-      <nav className={links} aria-label="footer">
-        <ul className={footerNavList}>
-          <li className={footerNavListItem}>
-            <a href="https://github.com/gatsbyjs/gatsby-starter-shopify">
-              Source Code and Docs
-            </a>
-          </li>
-          <li className={footerNavListItem}>
-            <a href="https://www.gatsbyjs.com/cloud/">About Gatsby Cloud</a>
-          </li>
-          {process.env.GATSBY_DEMO_STORE === "true" && (
-            <li className={footerNavListItem}>
-              <a href="https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-shopify&utm_campaign=shopify-starter">
-                <img
-                  src="https://www.gatsbyjs.com/deploynow.png"
-                  alt="Deploy to Gatsby Cloud"
-                  height="38"
-                  width="251"
-                />
-              </a>
-            </li>
-          )}
-        </ul>
-      </nav>
-      <div className={copyright}>
-        Copyright &copy; {new Date().getFullYear()} · All rights reserved
-      </div>
-    </footer>
-  )
-}
+    <Box as="footer" variant="styles.footer">
+      <Container>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <NavLink href="/contact/" variant="footer">
+            Contact
+          </NavLink>
+          <NavLink href="/shipping/" variant="footer">
+            Shipping
+          </NavLink>
+          <NavLink href="/terms/" variant="footer">
+            Terms
+          </NavLink>
+          <NavLink href="/privacy/" variant="footer">
+            Privacy
+          </NavLink>
+          <Box>
+            <Flex>
+              <HeartIcon />
+              Bournemouth, UK
+            </Flex>
+            <Box sx={{ p: 2 }}>
+              UK COMPANY: 12253208 - © {new Date().getFullYear()} Midas Prosecco
+            </Box>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
+  );
+};
+
+export default Footer;

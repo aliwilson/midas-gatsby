@@ -1,45 +1,39 @@
 {
-  "name": "gatsby-starter-shopify",
-  "version": "1.0.0",
+  "name": "gatsby-starter-hello-world",
   "private": true,
-  "description": "A Gatsby starter using the latest Shopify plugin showcasing a store with product overview, individual product pages, and a cart.",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
   "license": "0BSD",
-  "keywords": [
-    "gatsby",
-    "shopify",
-    "starter",
-    "ecommerce",
-    "e-commerce"
-  ],
   "scripts": {
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "^1.1.0",
-    "debounce": "^1.2.1",
-    "dotenv": "^10.0.0",
-    "gatsby": "^4.19.0",
-    "gatsby-plugin-gatsby-cloud": "^4.0.0",
-    "gatsby-plugin-google-analytics": "^4.0.0",
-    "gatsby-plugin-image": "^2.0.0",
-    "gatsby-plugin-sharp": "^4.0.0",
-    "gatsby-plugin-sitemap": "^5.0.0",
-    "gatsby-source-filesystem": "^4.0.0",
-    "gatsby-source-shopify": "^6.0.0",
-    "gatsby-transformer-sharp": "^4.0.0",
-    "isomorphic-fetch": "^3.0.0",
-    "lodash.debounce": "^4.0.8",
-    "lodash.isequal": "^4.5.0",
-    "query-string": "^7.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.1.0",
-    "shopify-buy": "^2.11.0",
-    "urql": "^2.0.2"
+    "@emotion/react": "^11.10.6",
+    "@mdx-js/react": "^2.3.0",
+    "@theme-ui/mdx": "^0.15.5",
+    "gatsby": "^5.7.0",
+    "gatsby-plugin-image": "^3.7.0",
+    "gatsby-plugin-theme-ui": "^0.15.5",
+    "gatsby-source-contentful": "^8.7.0",
+    "gatsby-source-shopify": "^8.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-particles": "^2.9.3",
+    "styled-components": "^5.3.9",
+    "theme-ui": "^0.15.5",
+    "tsparticles": "^2.9.3",
+    "tsparticles-engine": "^2.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

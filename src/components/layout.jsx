@@ -1,15 +1,13 @@
-import * as React from "react"
-import { SkipNavContent, SkipNavLink } from "./skip-nav"
-import { Header } from "./header"
-import { Footer } from "./footer"
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-export function Layout({ children }) {
+export default function Layout({ children }) {
   return (
-    <div>
-      <SkipNavLink />
+    <React.Fragment>
       <Header />
-      <SkipNavContent>{children}</SkipNavContent>
+      {children}
       <Footer />
-    </div>
-  )
+    </React.Fragment>
+  );
 }
