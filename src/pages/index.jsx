@@ -1,12 +1,34 @@
 import React, { useCallback } from "react";
+import { graphql } from "gatsby";
+import { Box, Button, Flex, Image, Text } from "theme-ui";
+import { loadFull } from "tsparticles";
 import styled from "styled-components";
+import Particles from "react-particles";
+
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-import { graphql } from "gatsby";
-import { Box, Image } from "theme-ui";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
+import mpsignature from "../components/icons/mpsignature.png";
+
 import options from "./indexparticles";
+
+const Section = styled(Box)``;
+
+const HeaderSection = styled(Box)`
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #020202;
+    opacity: 0.8;
+  }
+`;
 
 const BgShade = styled.div`
   background: -moz-radial-gradient(
@@ -32,7 +54,8 @@ const BgShade = styled.div`
   top: 0%;
   height: 100%;
   width: 100%;
-  opacity: 0.2;
+  opacity: 0.35;
+  z-index: 0;
 `;
 
 export default function Home({ data }) {
@@ -42,20 +65,12 @@ export default function Home({ data }) {
   }, []);
 
   return (
-    <Layout>
-      <Box
-        sx={{
-          position: "relative",
-          "#tsparticles": {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          },
-        }}
+    <Layout overlaid={true}>
+      <HeaderSection
+        variant="styles.section"
+        sx={{ backgroundImage: `url(${headerImage})` }}
       >
-        <BgShade />
+        <BgShade className="shade" />
         <Particles
           init={particlesInit}
           style={{
@@ -64,11 +79,40 @@ export default function Home({ data }) {
             left: 0,
             width: "100%",
             height: "100%",
+            zIndex: 1,
           }}
           options={options}
         />
-        <Image src={headerImage} sx={{ display: "block", opacity: 0.15 }} />
-      </Box>
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            zIndex: 2,
+          }}
+        >
+          <Box sx={{ maxWidth: 600, position: "relative" }}>
+            <Flex
+              sx={{
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <Image
+                src={mpsignature}
+                sx={{ width: 400, userSelect: "none" }}
+              />
+              <Text as="p" mt={4} sx={{ fontSize: [14, 16, 18] }}>
+                Grown from royal roots in the sun-soaked golden hills of
+                Friuli-Venezia Giulia, Italy, Midas Prosecco combines
+                generations of tradition with cutting-edge technology.
+              </Text>
+            </Flex>
+          </Box>
+        </Flex>
+      </HeaderSection>
+      <Section variant="styles.section">asds</Section>
     </Layout>
   );
 }

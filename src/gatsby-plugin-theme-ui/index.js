@@ -1,5 +1,9 @@
 // example theme file
+
+const padding = "2rem";
+
 const theme = {
+  breakpoints: [40, 52, 64].map((n) => n + "em"),
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: "brandon-grotesque, sans-serif",
@@ -7,23 +11,42 @@ const theme = {
     monospace: "Menlo, monospace",
   },
   fontSizes: [13, 14, 16, 20, 24, 32, 48, 64, 96],
+  sizes: {
+    wide: 2048,
+    container: 1400,
+    narrow: 512,
+  },
   fontWeights: {
     body: 400,
-    heading: 600,
+    heading: 500,
     bold: 700,
   },
   lineHeights: {
     body: 1.75,
     heading: 1.25,
   },
+  text: {
+    h1: {
+      fontWeight: 800,
+    },
+  },
+  heading: {
+    fontWeight: "heading",
+  },
   colors: {
-    text: "#fff",
+    text: "#e0e0e0",
     background: "#151515",
     offblack: "#050505",
     primary: "#c99e41",
     secondary: "#0cf",
     highlight: "#f0c",
     muted: "#011",
+    grey: "#919496",
+  },
+  layout: {
+    container: {
+      px: padding,
+    },
   },
   styles: {
     root: {
@@ -32,22 +55,36 @@ const theme = {
       fontWeight: "body",
     },
     footer: {
-      fontSize: 0,
-      background: "#060606",
-      py: [3, 5],
+      fontSize: "11px",
+      background: "offblack",
+      color: "text",
+      py: [4, 5],
+      textTransform: "uppercase",
     },
     navbar: {
       justifyContent: "center",
     },
     header: {
-      background: "#060606",
+      background: "offblack",
       py: [3, 4],
+      overlaid: {
+        position: "absolute",
+        zIndex: 10,
+        width: "100%",
+        background: "transparent",
+        py: [3, 4],
+      },
+    },
+    section: {
+      margin: "0 auto",
+      px: padding,
+      py: [3, 5],
     },
     h1: {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
+      fontWeight: 400,
       fontSize: 5,
     },
     h2: {
@@ -125,16 +162,20 @@ const theme = {
   links: {
     footer: {
       fontSize: "11px",
+      color: "grey",
+      px: [2, 3],
       textTransform: "uppercase",
-      fontWeight: 400,
+      fontWeight: 500,
+      letterSpacing: 1,
     },
     nav: {
-      px: 2,
+      px: [2, 3, 4],
       py: 1,
       fontSize: 0,
       fontWeight: 400,
       textTransform: "uppercase",
-      letterSpacing: 0.5,
+      letterSpacing: 1,
+      lineHeight: 1,
     },
   },
 };

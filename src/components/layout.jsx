@@ -2,12 +2,15 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Layout({ children }) {
+const Layout = (props) => {
+  const { children, overlaid } = props;
   return (
     <React.Fragment>
-      <Header />
+      <Header overlaid={overlaid} />
       {children}
       <Footer />
     </React.Fragment>
   );
-}
+};
+
+export default Layout;
