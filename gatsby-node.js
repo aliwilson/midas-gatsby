@@ -8,21 +8,44 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             title
-            featuredImage {
-              originalSrc
-            }
+            storefrontId
             shopifyId
             handle
             description
+            status
+            featuredImage {
+              altText
+              originalSrc
+              gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
+            }
+            variants {
+              availableForSale
+              storefrontId
+              title
+              price
+              selectedOptions {
+                name
+                value
+              }
+              image {
+                gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
+              }
+            }
+            options {
+              name
+              values
+              shopifyId
+          }
             priceRangeV2 {
               maxVariantPrice {
                 amount
+                currencyCode
               }
               minVariantPrice {
                 amount
+                currencyCode
               }
             }
-            status
           }
         }
       }
@@ -36,6 +59,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/product.jsx`),
       context: {
         product: node,
+        shopifyId: node.shopifyId
       },
     });
   });

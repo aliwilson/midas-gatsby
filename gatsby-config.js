@@ -18,6 +18,7 @@ module.exports = {
       options: {
         password: process.env.SHOPIFY_SHOP_PASSWORD,
         storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
+        apiVersion: '2022-07'
         // salesChannel: process.env.SHOPIFY_APP_ID, // Optional but recommended
       },
     },

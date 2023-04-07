@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Seo from "../components/Seo";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 
 const ProductsPage = ({ data }) => (
   <Layout>

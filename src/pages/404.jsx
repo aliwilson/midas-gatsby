@@ -99,16 +99,8 @@ export default function Home({ data }) {
                 textAlign: "center",
               }}
             >
-              <Image
-                src={mpsignature}
-                sx={{ width: 400, userSelect: "none" }}
-              />
-              <Text as="p" mt={4} sx={{ fontSize: [14, 16, 18] }}>
-                Grown from royal roots in the sun-soaked golden hills of
-                Friuli-Venezia Giulia, Italy, Midas Prosecco combines
-                generations of tradition with cutting-edge technology.
-              </Text>
-            </Flex>
+              <Text as="h1">Page not found.</Text>
+              </Flex>
           </Box>
         </Flex>
       </HeaderSection>
