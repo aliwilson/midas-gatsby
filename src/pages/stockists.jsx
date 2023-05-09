@@ -7,7 +7,7 @@
 //   useEffect(() => {
 //     createStoreLocatorMap({
 //       container: mapRef,
-//       loaderOptions: { apiKey: "AIzaSyCOzKpogwdeRFDb_uz5oxSqc4Z2j_3JTpw" },
+//       loaderOptions: { apiKey: "xxxx" },
 //       geoJson: "sample.json",
 //       mapOptions: { center: { lat: 52.632469, lng: -1.689423 }, zoom: 7 },
 //       formatLogoPath: (feature) =>
