@@ -61,6 +61,12 @@ const theme = {
       py: [4, 5],
       textTransform: "uppercase",
     },
+    footersmall: {
+      variant: "footer",
+      background: "offblack",
+      py: [3,4],
+      borderTop: "1px solid rgba(255,255,255,0.1)"
+    },
     navbar: {
       justifyContent: "center",
     },
